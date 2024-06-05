@@ -2,3 +2,7 @@ tree-sitter
 firebase_admin
 pyrebase4
 pydantic
+fastapi
+uvicorn
+psycopg2-binary
+python-dotenv
