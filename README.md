@@ -43,6 +43,26 @@ python-dotenv
     ```shell
     uvicorn main:app --reload 
 
+## Schema Design
+1. File Table (file)
+ - id - PK
+ - file_name
+ - repo_id
+
+2. Classes Table (classes)
+ - id - PK
+ - class_name
+ - file_id - fk
+
+3. Functions Table (function)
+ - id - PK
+ - function_id - unique
+ - function_name
+ - file_id - FK
+ - function_body 
+ - class_id - FK
+
+
 
 ## API's List
 
@@ -53,6 +73,8 @@ python-dotenv
     @Get  /fetch-code
     @Get  /list-functions
     ```
+
+    
 
 ## API's list and response 
 
@@ -79,10 +101,19 @@ python-dotenv
     ![alt text](https://github.com/farhanjafri25/github-auth/blob/master/save-gitrepo.png?raw=true)
 
 - File Schema record
+    ![alt text](https://github.com/farhanjafri25/github-auth/blob/master/file-table.png?raw=true)
 
 - Class schema Record
 
+    ![alt text](https://github.com/farhanjafri25/github-auth/blob/master/class-table.png?raw=true)
+
+
 - Functions Schema Record
+
+    ![alt text](https://github.com/farhanjafri25/github-auth/blob/master/function-table.png?raw=true)
+    ![alt text](https://github.com/farhanjafri25/github-auth/blob/master/functions-table.png?raw=true)
+
+
     
 
 4. Fetch functions list API
@@ -95,4 +126,8 @@ python-dotenv
 
     ![alt text](https://github.com/farhanjafri25/github-auth/blob/master/fetch-code.png?raw=true)
 
+
+## Assumptions
+
+I am crawling only Python codebases and the code outside of function scope are not covered in the project as not mentioned per the criteria.
 
